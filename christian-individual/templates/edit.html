@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-warning text-dark">
+                <h5>Edit Employee</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label>Name</label>
+                        <input name="name" value="{{ employee.name }}" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Position</label>
+                        <input name="position" value="{{ employee.position }}" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Department</label>
+                        <input name="department" value="{{ employee.department }}" class="form-control" required>
+                    </div>
+                    <button class="btn btn-primary">Update</button>
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
